@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { LinkButton } from "../components/LinkButton";
 
 export default function Home() {
   return (
@@ -19,28 +20,18 @@ export default function Home() {
           priority
         />
       </div>
-      <div className="text-center flex flex-col items-center gap-2">
-        <h1 className="text-5xl font-bold font-mono text-black px-3 py-1.5 bg-white">Jefferson Chen</h1>
-        <h2 className="text-2xl font-mono text-gray-700 px-2 py-1 bg-white">Software Engineer</h2>
-        <p className="text-lg font-mono text-gray-600 px-2 py-1 bg-white">
+      <div className="text-center flex flex-col items-center gap-2 bg-white/50 backdrop-blur-[2px] p-4">
+        <h1 className="text-5xl font-bold font-mono text-black">Jefferson Chen</h1>
+        <h2 className="text-2xl font-mono text-gray-700">Software Engineer</h2>
+        <p className="text-lg font-mono text-gray-600">
           Currently working on the future of education at Art of Problem Solving
         </p>
         <div className="flex gap-3 justify-center">
-          <a href="/blog" className="text-gray-700 px-1.5 py-0.5 hover:text-gray-400 transition-colors bg-white">
-            Blog
-          </a>
-          <a href="/about" className="text-gray-700 px-1.5 py-0.5 hover:text-gray-400 transition-colors bg-white">
-            About
-          </a>
-          <a href="https://github.com" className="text-gray-700 px-1.5 py-0.5 hover:text-gray-400 transition-colors bg-white">
-            GitHub
-          </a>
-          <a href="https://linkedin.com" className="text-gray-700 px-1.5 py-0.5 hover:text-gray-400 transition-colors bg-white">
-            LinkedIn
-          </a>
-          <a href="mailto:email@example.com" className="text-gray-700 px-1.5 py-0.5 hover:text-gray-400 transition-colors bg-white">
-            Email
-          </a>
+          <LinkButton href="/blog">Blog</LinkButton>
+          <LinkButton href="/about">About</LinkButton>
+          <LinkButton href="https://github.com">GitHub</LinkButton>
+          <LinkButton href="https://linkedin.com">LinkedIn</LinkButton>
+          <LinkButton href="mailto:email@example.com">Email</LinkButton>
         </div>
       </div>
     </div>
