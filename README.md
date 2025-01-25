@@ -6,6 +6,7 @@
     - [ ] animate birds
   - [ ] clean up tree image
 - [ ] make initial page look more clickable
+  - [ ] make a gently blazing sun
 - [ ] make background while name is up not clickable
 - [ ] implement Blog page
   - [ ] articles

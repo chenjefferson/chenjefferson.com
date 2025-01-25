@@ -33,6 +33,19 @@ export default function Home() {
           height={100}
           priority
         />
+        <Image
+          src="/assets/grass1.png"
+          alt="Grass"
+          style={{
+            position: 'absolute',
+            bottom: "-10%",
+            left: "-5%",
+            objectFit: 'contain'
+          }}
+          width={400}
+          height={400}
+          priority
+        />
       </div>
       <div 
         className={`
