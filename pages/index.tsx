@@ -1,26 +1,55 @@
 import Image from "next/image";
 import { LinkButton } from "../components/LinkButton";
+import { useState } from "react";
 
 export default function Home() {
+  const [showContent, setShowContent] = useState(false);
+
   return (
-    <div className={`relative w-full h-screen flex flex-col items-center justify-center font-serif`}>
+    <div 
+      className={`relative w-full h-screen flex flex-col items-center justify-center font-serif cursor-pointer`}
+      onClick={() => setShowContent(true)}
+      onWheel={() => setShowContent(true)}
+    >
       <div className="fixed inset-0 -z-10">
         <Image
           src="/assets/ink_tree.png"
           alt="Background"
-          style={{
-            position: 'absolute',
-            left: '20%',
-            top: '60%',
-            transform: 'translate(-50%, -50%)',
-            objectFit: 'none'
-          }}
+          className="absolute left-[20%] top-[60%] -translate-x-1/2 -translate-y-1/2 object-none animate-[sway_10s_ease-in-out_infinite]"
           width={500}
           height={500}
           priority
         />
+        <Image
+          src="/assets/birds.png"
+          alt="Background Birds"
+          style={{
+            position: 'absolute',
+            right: '10%',
+            top: '10%',
+            objectFit: 'contain'
+          }}
+          width={100}
+          height={100}
+          priority
+        />
       </div>
-      <div className="text-center flex flex-col items-center gap-2 bg-white/50 backdrop-blur-[2px] p-4">
+      <div 
+        className={`
+          fixed inset-0
+          w-screen h-screen
+          text-center
+          flex flex-col justify-center items-center
+          gap-2
+          bg-white/80
+          backdrop-blur-[2px]
+          p-4
+          relative
+          transition-opacity duration-500
+          ${showContent ? 'opacity-100' : 'opacity-0 pointer-events-none'}
+        `}
+        onClick={(e) => {e.stopPropagation(); setShowContent(false)}}
+      >
         <h1 className="text-5xl font-bold font-mono text-black">Jefferson Chen</h1>
         <h2 className="text-2xl font-mono text-gray-700">Software Engineer</h2>
         <p className="text-lg font-mono text-gray-600">
@@ -29,9 +58,9 @@ export default function Home() {
         <div className="flex gap-3 justify-center">
           <LinkButton href="/blog">Blog</LinkButton>
           <LinkButton href="/about">About</LinkButton>
-          <LinkButton href="https://github.com">GitHub</LinkButton>
-          <LinkButton href="https://linkedin.com">LinkedIn</LinkButton>
-          <LinkButton href="mailto:email@example.com">Email</LinkButton>
+          <LinkButton href="https://github.com/chenjefferson">GitHub</LinkButton>
+          <LinkButton href="https://linkedin.com/jeffwilliamchen">LinkedIn</LinkButton>
+          <LinkButton href="mailto:me@chenjefferson.com">Contact</LinkButton>
         </div>
       </div>
     </div>
